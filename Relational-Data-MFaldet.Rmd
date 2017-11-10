@@ -1,0 +1,54 @@
+---
+title: "relational data Chap 10"
+author: "Mac Faldet"
+date: "November 9, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE, echo=FALSE}
+library(tidyverse)
+library(readr)
+library(dplyr)
+library(nycflights13)
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Chapter 13 Relational Data
+
+For nycflights13:
+
+`flights` connects to planes via a single variable, `tailnum`.
+
+`flights` connects to airlines through the `carrier` variable.
+
+`flights` connects to airports in two ways: via the `origin` and `dest` variables.
+
+`flights` connects to weather via `origin` (the location), and `year`, `month`, `day` and `hour` (the time).
+
+
+Topics, functions
+
+keys: `primary key`, `foreign key`,
+mutating joins: `left_join`, `right_join`, `inner_join`, `full_join`
+`merge vs. joins`
+filtering joins: `semi_join`, `anti_join`
+set operations: `intersect`, `union`, `setdiff`
+
+
+## 13.2.1 Exercises
+
+1. Imagine you wanted to draw (approximately) the route each plane flies from its origin to its destination. What variables would you need? What tables would you need to combine?
+
+  - We would need the `origin`, `dest`, and `carrier` variables in order to join on the *airplanes* and *airports* tibbles.
+
+2. I forgot to draw the relationship between weather and airports. What is the relationship and how should it appear in the diagram?
+
+  - you can match the variable `origin` in *weather* to `faa` in *airports*.
+
+3. weather only contains information for the origin (NYC) airports. If it contained weather records for all airports in the USA, what additional relation would it define with flights?
+
+  - 
+
+4. We know that some days of the year are “special”, and fewer people than usual fly on them. How might you represent that data as a data frame? What would be the primary keys of that table? How would it connect to the existing tables?
+
+  - 
