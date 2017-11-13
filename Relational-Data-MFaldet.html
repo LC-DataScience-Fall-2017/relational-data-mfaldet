@@ -151,14 +151,25 @@ $(document).ready(function () {
 <li>weather only contains information for the origin (NYC) airports. If it contained weather records for all airports in the USA, what additional relation would it define with flights?</li>
 </ol>
 <ul>
-<li></li>
+<li><code>year</code>, <code>month</code>, <code>day</code>, <code>hour</code>, and <code>origin</code> would all additionally match.</li>
 </ul>
 <ol start="4" style="list-style-type: decimal">
 <li>We know that some days of the year are “special”, and fewer people than usual fly on them. How might you represent that data as a data frame? What would be the primary keys of that table? How would it connect to the existing tables?</li>
 </ol>
 <ul>
-<li></li>
+<li>I would create a tibble of special time frames in which a certain flighing behavior was expected to happen, then I would have it join to <em>flight</em> on <code>year</code>, <code>month</code>, <code>day</code>, and <code>hour</code> if needed.</li>
 </ul>
+</div>
+<div id="keys" class="section level2">
+<h2>13.3 Keys</h2>
+<p>There are two types of keys:</p>
+<ul>
+<li><p>A <em><em>primary key</em></em> uniquely identifies an observation in its own table. For example, planes$tailnum is a primary key because it uniquely identifies each plane in the planes table.</p></li>
+<li><p>A <em><em>foreign key</em></em> uniquely identifies an observation in another table. For example, the flights$tailnum is a foreign key because it appears in the flights table where it matches each flight to a unique plane.</p></li>
+</ul>
+</div>
+<div id="section" class="section level2">
+<h2>13.3.</h2>
 </div>
 
 
