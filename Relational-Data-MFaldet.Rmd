@@ -304,4 +304,37 @@ flights %>%
   distinct()
 ```
 
+## 13.7 Set Operations
 
+These expect the `x` and `y` inputs to have the same variables, and treat the observations like sets:
+
+  - `intersect(x, y)`: return only observations in both `x` and `y`.
+  - `union(x, y)`: return unique observations in `x` and `y`.
+  - `setdiff(x, y)`: return observations in `x`, but not in `y`.
+
+Given this simple data:
+
+```{r setopup,echo=FALSE}
+df1 <- tribble(
+  ~x, ~y,
+   1,  1,
+   2,  1
+)
+df2 <- tribble(
+  ~x, ~y,
+   1,  1,
+   1,  2
+)
+```
+
+The four possibilities are:
+
+```{r setops,echo=FALSE}
+intersect(df1, df2)
+
+union(df1, df2)
+
+setdiff(df1, df2)
+
+setdiff(df2, df1)
+```
